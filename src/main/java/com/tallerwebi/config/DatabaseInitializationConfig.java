@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatabaseInitializationConfig {
+    /*
 
     @Autowired
     private DataSource dataSource;
@@ -26,4 +27,6 @@ public class DatabaseInitializationConfig {
 
         return initializer;
     }
+
+     */
 }

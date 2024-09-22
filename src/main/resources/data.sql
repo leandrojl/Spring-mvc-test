@@ -1,1 +1,1 @@
-<!--hacer un insert de la tabla para que levante el proyecto
+<!-- descomentar la clase DatabaseInitializationConfig para que funcione esto
