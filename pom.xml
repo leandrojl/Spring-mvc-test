@@ -116,6 +116,11 @@
             <version>${playwright.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version> <!-- Puedes verificar si hay una versión más reciente -->
+        </dependency>
         <!-- compile only, deployed container will provide this -->
         <!--
         <dependency>
