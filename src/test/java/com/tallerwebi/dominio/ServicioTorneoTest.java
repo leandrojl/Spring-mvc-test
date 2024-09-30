@@ -1,6 +1,5 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.infraestructura.RepositorioTorneo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -49,7 +48,7 @@ public class ServicioTorneoTest {
 
         // Then: Se verifica que el nombre y la ubicación son los correctos
         assertEquals(nombreTorneo, torneo.getNombre());
-        assertEquals(ubicacionTorneo, torneo.getUbicacion());
+        assertEquals(ubicacionTorneo, torneo.getPais());
     }
 
     @Test

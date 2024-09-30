@@ -1,9 +1,7 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.infraestructura.RepositorioTorneo;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 

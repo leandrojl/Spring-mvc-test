@@ -1,7 +1,6 @@
-package com.tallerwebi.infraestructura;
+package com.tallerwebi.dominio;
 
 
-import com.tallerwebi.dominio.Torneo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,4 +8,6 @@ import java.util.List;
 @Repository
 public interface RepositorioTorneo {
     List<Torneo> obtenerTodosLosTorneos();
+
+    void guardarTorneo(Torneo torneo1);
 }

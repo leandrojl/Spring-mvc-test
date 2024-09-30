@@ -1,11 +1,7 @@
 package com.tallerwebi.dominio;
 
-import com.tallerwebi.infraestructura.RepositorioTorneo;
-import com.tallerwebi.infraestructura.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service("servicioUsuario")
 public class ServicioUsuarioImpl implements ServicioUsuario {
