@@ -1,17 +1,29 @@
 package com.tallerwebi.dominio;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Usuario {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String apellido;
     private String manoHabil;
     private String ubicacion;
     private PermisoUsuario permisoUsuario;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "amigos",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "amigo_id")
+    )
     private List<Usuario> amigos;
 
 

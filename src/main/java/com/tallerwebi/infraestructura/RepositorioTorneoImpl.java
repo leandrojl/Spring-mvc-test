@@ -10,6 +10,8 @@ import java.util.List;
 public class RepositorioTorneoImpl implements RepositorioTorneo {
 
 
+
+
     @Override
     public List<Torneo> obtenerTodosLosTorneos() {
         // Simulación de una lista de torneos
