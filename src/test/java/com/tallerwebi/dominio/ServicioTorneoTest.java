@@ -41,14 +41,15 @@ public class ServicioTorneoTest {
     public void queSePuedaCrearUnTorneoConNombreYUbicacion() {
         // Given: Datos de entrada (nombre y ubicación del torneo)
         String nombreTorneo = "Torneo de Pádel";
-        String ubicacionTorneo = "Madrid";
+        Pais pais = new Pais();
+        pais.setNombre("Alemania");
 
         // When: Se crea un nuevo torneo con esos datos
-        Torneo torneo = new Torneo(nombreTorneo, ubicacionTorneo);
+        Torneo torneo = new Torneo(nombreTorneo, pais);
 
         // Then: Se verifica que el nombre y la ubicación son los correctos
         assertEquals(nombreTorneo, torneo.getNombre());
-        assertEquals(ubicacionTorneo, torneo.getPais());
+        assertEquals(pais, torneo.getPais());
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.tallerwebi.infraestructura;
 
+import com.tallerwebi.dominio.Pais;
 import com.tallerwebi.dominio.RepositorioTorneo;
 import com.tallerwebi.dominio.Torneo;
 import com.tallerwebi.infraestructura.config.HibernateInfraestructuraTestConfig;
@@ -41,7 +42,9 @@ public class RepositorioTorneoImplTest {
     public void queSePuedanGuardarUnTorneosEnLaBaseDeDatos(){
 
         //dado que tengo dos torneos
-        Torneo torneo1 = new Torneo("Torneo de Pádel", "Madrid");
+        Pais pais = new Pais();
+        pais.setNombre("Alemania");
+        Torneo torneo1 = new Torneo("Torneo de Pádel", pais);
 
 
 
@@ -50,13 +53,13 @@ public class RepositorioTorneoImplTest {
         this.repositorioTorneo.guardarTorneo(torneo1);
 
 
-        String hql = "FROM Torneo WHERE nombre = :nombre AND ubicacion = :ubicacion";
+        String hql = "FROM Torneo WHERE nombre = :nombre AND pais = :pais";
 
         Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
 
         query.setParameter("nombre", "Torneo de Pádel");
 
-        query.setParameter("ubicacion", "Madrid");
+        query.setParameter("pais", "Alemania");
 
         //entonces tengo un torneo
 

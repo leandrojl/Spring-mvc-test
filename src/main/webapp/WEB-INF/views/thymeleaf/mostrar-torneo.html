@@ -25,8 +25,8 @@
     <tbody>
     <!-- Thymeleaf para iterar sobre la lista de torneos -->
     <tr th:each="torneo : ${torneos}">
-      <td th:text="${torneo.nombre}"></td>
-      <td th:text="${torneo.ubicacion}"></td>
+      <td th:text="${torneo.getNombre()}"></td>
+      <td th:text="${torneo.getPais().getNombre()}"></td>
     </tr>
     </tbody>
   </table>

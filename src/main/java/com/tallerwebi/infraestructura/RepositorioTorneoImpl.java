@@ -6,10 +6,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository("repositorioTorneo")
+@Transactional
 public class RepositorioTorneoImpl implements RepositorioTorneo {
 
     private SessionFactory sessionFactory;
@@ -21,13 +23,10 @@ public class RepositorioTorneoImpl implements RepositorioTorneo {
 
     @Override
     public List<Torneo> obtenerTodosLosTorneos() {
-        // Simulación de una lista de torneos
-        List<Torneo> torneos = new ArrayList<>();
-        torneos.add(new Torneo("Torneo de Pádel", "Madrid"));
-        torneos.add(new Torneo("Torneo de Verano", "Barcelona"));
-        torneos.add(new Torneo("Torneo de Invierno", "Valencia"));
 
-        return torneos;
+        return this.sessionFactory.getCurrentSession().createQuery("FROM Torneo").getResultList();
+
+
     }
     //guardo el torneo en la bd
     @Override

@@ -1,9 +1,6 @@
 package com.tallerwebi.dominio;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -15,9 +12,12 @@ public class Torneo {
 
 
     private String nombre;
-    private String pais;
 
-    public Torneo(String nombre, String pais) {
+    @ManyToOne
+    @JoinColumn(name = "pais_id")  // Esto crea una clave foránea en la tabla Torneo
+    private Pais pais;
+
+    public Torneo(String nombre, Pais pais) {
         this.nombre = nombre;
         this.pais = pais;
     }
@@ -35,11 +35,11 @@ public class Torneo {
         return nombre;
     }
 
-    public String getPais() {
+    public Pais getPais() {
         return this.pais;
     }
 
-    public void setPais(String pais) {
+    public void setPais(Pais pais) {
         this.pais = pais;
     }
 
