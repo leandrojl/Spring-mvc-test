@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Encabezado -->
+<div class="w3-container w3-teal w3-padding-16">
+    <h1 class="w3-center w3-xxlarge">Torneos</h1>
+</div>
+
+<!-- Contenedor principal -->
+<div class="w3-container w3-padding-32">
+    <table class="w3-table-all w3-hoverable w3-centered w3-card-4 w3-small">
+        <thead class="w3-teal">
+        <tr>
+            <th class="w3-black">Partido:</th>
+            <th class="w3-black">Ubicacion:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Thymeleaf para iterar sobre la lista de torneos -->
+        <tr th:each="partido : ${partidos}">
+            <td th:text="${partido.getNombre()}"></td>
+            <td th:text="${partido.getPais().getNombre()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Pie de página -->
+<div class="w3-container w3-teal w3-padding-16 w3-margin-top">
+    <h6 class="w3-center">Todos los derechos reservados</h6>
+</div>
+
+</body>
+</html>

@@ -180,4 +180,23 @@ public class ServicioUsuarioTest {
         verify(repositorioUsuarioMock).buscarUsuario(usuarioQueBusca, usuarioBuscado);
 
     }
+
+
+    @Test
+    public void queSePuedanGuardarDosPartidosEnElUsuario() {
+
+        Usuario usuario1 = new Usuario();
+        Partido partido1 = new Partido();
+        Partido partido2 = new Partido();
+
+        servicioUsuario.guardarPartido(usuario1, partido1);
+        servicioUsuario.guardarPartido(usuario1, partido2);
+
+        when(repositorioUsuarioMock.guardarPartido(usuario1, partido1)).thenReturn(true);
+        when(repositorioUsuarioMock.guardarPartido(usuario1, partido2)).thenReturn(true);
+
+
+        verify(repositorioUsuarioMock, times(1)).guardarPartido(usuario1, partido1);
+        verify(repositorioUsuarioMock, times(1)).guardarPartido(usuario1, partido2);
+    }
 }

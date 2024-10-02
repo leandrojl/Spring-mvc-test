@@ -36,5 +36,10 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
         return this.repositorioUsuario.buscarUsuario(usuarioQueBusca, usuarioBuscado);
     }
 
+    @Override
+    public Boolean guardarPartido(Usuario usuario, Partido partido1) {
+        return this.repositorioUsuario.guardarPartido(usuario,partido1);
+    }
+
 
 }
