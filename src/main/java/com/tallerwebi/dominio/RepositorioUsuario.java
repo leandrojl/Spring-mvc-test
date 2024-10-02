@@ -10,4 +10,5 @@ public interface RepositorioUsuario {
 
     Usuario buscarUsuario(Usuario usuarioQueBusca, Usuario usuarioBuscado);
 
+    Boolean guardarPartido(Usuario usuario, Partido partido1);
 }

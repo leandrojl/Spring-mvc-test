@@ -38,7 +38,7 @@ public class ServicioTorneoTest {
     }
 
     @Test
-    public void queSePuedaCrearUnTorneoConNombreYUbicacion() {
+    public void queSePuedaCrearUnTorneoConNombreYPais() {
         // Given: Datos de entrada (nombre y ubicación del torneo)
         String nombreTorneo = "Torneo de Pádel";
         Pais pais = new Pais();
